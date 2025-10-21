@@ -1,0 +1,12 @@
+{
+    "Unexpected_Error": {
+        "hu": "Váratlan hiba történt!",
+        "en": "An unexpected error occurred!",
+        "de": "Ein unerwarteter Fehler ist aufgetreten!"
+    },
+    "Successfully_Updated_User": {
+        "hu": "Sikeresen módosítottad az adataid!",
+        "en": "Your data has been successfully updated!",
+        "de": "Ihre Daten wurden erfolgreich aktualisiert!"
+    }
+}
