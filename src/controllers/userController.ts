@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { userService } from "../services/userService";
 import { returnError } from "../utils/index";
-import responses from "../config/errorResponses.json";
+import responses from "./../responses/errorResponses.json";
 import { language } from "../types/index";
 
 export const getUsers = async (req: Request, res: Response) => {
