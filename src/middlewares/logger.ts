@@ -1,5 +1,7 @@
 import winston, { Logger } from "winston";
 import schedule from "node-schedule";
+import fs from "fs";
+import path from "path";
 
 let logger: Logger;
 let errorLogger: Logger;
@@ -9,7 +11,15 @@ const createLoggers = (): void => {
   const day = String(date.getDate()).padStart(2, "0");
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = date.getFullYear();
-  const logFileName = `${year}-${month}-${day}.log`;
+  const folderName = `${year}-${month}-${day}`;
+  const logDir = path.join(__dirname, "../../logs", folderName);
+
+  if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir, { recursive: true });
+  }
+
+  const logFilePath = path.join(logDir, "app.log");
+  const errorLogFilePath = path.join(logDir, "errors.log");
 
   const customFormat = winston.format.printf(({ level, message, timestamp, metadata }) => {
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] ${level !== "info" ? message : ""}`;
@@ -23,7 +33,7 @@ const createLoggers = (): void => {
   });
 
   logger = winston.createLogger({
-    transports: [new winston.transports.Console(), new winston.transports.File({ filename: `./logs/${logFileName}` })],
+    transports: [new winston.transports.Console(), new winston.transports.File({ filename: logFilePath })],
     format: winston.format.combine(
       winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
       winston.format.metadata({ fillExcept: ["message", "level", "timestamp"] }),
@@ -32,10 +42,7 @@ const createLoggers = (): void => {
   });
 
   errorLogger = winston.createLogger({
-    transports: [
-      new winston.transports.Console(),
-      new winston.transports.File({ filename: `./logs/errors_${logFileName}` }),
-    ],
+    transports: [new winston.transports.Console(), new winston.transports.File({ filename: errorLogFilePath })],
     format: winston.format.combine(
       winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
       winston.format.metadata({ fillExcept: ["message", "level", "timestamp"] }),
