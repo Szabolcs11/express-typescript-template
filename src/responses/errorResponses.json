@@ -8,5 +8,100 @@
         "hu": "Sikeresen módosítottad az adataid!",
         "en": "Your data has been successfully updated!",
         "de": "Ihre Daten wurden erfolgreich aktualisiert!"
+    },
+    "Login_Successful": {
+        "hu": "Sikeres bejelentkezés!",
+        "en": "Login successful!",
+        "de": "Anmeldung erfolgreich!"
+    },
+    "Invalid_Username_Or_Password": {
+        "hu": "Érvénytelen felhasználónév vagy jelszó!",
+        "en": "Invalid username or password!",
+        "de": "Ungültiger Benutzername oder Passwort!"
+    },
+    "Missing_Username": {
+        "hu": "Hiányzó felhasználónév!",
+        "en": "Missing username!",
+        "de": "Fehlender Benutzername!"
+    },
+    "Missing_Password": {
+        "hu": "Hiányzó jelszó!",
+        "en": "Missing password!",
+        "de": "Fehlendes Passwort!"
+    },
+    "Username_Too_Short": {
+        "hu": "A felhasználónév túl rövid!",
+        "en": "Username is too short!",
+        "de": "Der Benutzername ist zu kurz!"
+    },
+    "Password_Too_Short": {
+        "hu": "A jelszó túl rövid!",
+        "en": "Password is too short!",
+        "de": "Das Passwort ist zu kurz!"
+    },
+    "Invalid_Words": {
+        "hu": "Tiltott szavak használata!",
+        "en": "Use of forbidden words!",
+        "de": "Verwendung verbotener Wörter!"
+    },
+    "Missing_Password_Confirmation": {
+        "hu": "Hiányzó jelszó megerősítés!",
+        "en": "Missing password confirmation!",
+        "de": "Fehlende Passwortbestätigung!"
+    },
+    "Missing_Email": {
+        "hu": "Hiányzó email cím!",
+        "en": "Missing email address!",
+        "de": "Fehlende E-Mail-Adresse!"
+    },
+    "Passwords_Do_Not_Match": {
+        "hu": "A jelszavak nem egyeznek!",
+        "en": "Passwords do not match!",
+        "de": "Die Passwörter stimmen nicht überein!"
+    },
+    "Username_Already_Exists": {
+        "hu": "A felhasználónév már létezik!",
+        "en": "Username already exists!",
+        "de": "Der Benutzername existiert bereits!"
+    },
+    "Email_Already_Exists": {
+        "hu": "Az email cím már létezik!",
+        "en": "Email address already exists!",
+        "de": "Die E-Mail-Adresse existiert bereits!"
+    },
+    "Error_During_Registration": {
+        "hu": "Hiba történt a regisztráció során!",
+        "en": "Error during registration!",
+        "de": "Fehler während der Registrierung!"
+    },
+    "Registration_Successful": {
+        "hu": "Sikeres regisztráció!",
+        "en": "Registration successful!",
+        "de": "Registrierung erfolgreich!"
+    },
+    "Invalid_Email_Format": {
+        "hu": "Érvénytelen email formátum!",
+        "en": "Invalid email format!",
+        "de": "Ungültiges E-Mail-Format!"
+    },
+    "Already_Logged_In": {
+        "hu": "Már be vagy jelentkezve!",
+        "en": "You are already logged in!",
+        "de": "Sie sind bereits eingeloggt!"
+    },
+    "Logout_Successful": {
+        "hu": "Sikeres kijelentkezés!",
+        "en": "Logout successful!",
+        "de": "Erfolgreich abgemeldet!"
+    },
+    "You_Are_Not_Logged_In": {
+        "hu": "Nincs bejelentkezve!",
+        "en": "You are not logged in!",
+        "de": "Sie sind nicht eingeloggt!"
+    },
+    "Unexpected_Error_Occurred": {
+        "hu": "Váratlan hiba történt!",
+        "en": "An unexpected error occurred!",
+        "de": "Ein unerwarteter Fehler ist aufgetreten!"
     }
 }
