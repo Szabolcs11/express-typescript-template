@@ -3,6 +3,7 @@ import responses from "../responses/errorResponses.json";
 import { authenticateUser, destroySession, getUserByName, registerUser } from "../services/authService";
 import { language } from "../types";
 import { returnError } from "../utils";
+import { COOKIE_NAMES } from "../config/contants";
 
 export const register = async (req: Request, res: Response) => {
   const { username, password, passwordConfirmation, email } = req.body;
@@ -29,7 +30,7 @@ export const login = async (req: Request, res: Response) => {
   const sessionToken = await authenticateUser(username, password);
   if (!sessionToken) return returnError(res, responses.Invalid_Username_Or_Password, language);
 
-  res.cookie("sessiontoken", sessionToken, {
+  res.cookie(COOKIE_NAMES.SESSION, sessionToken, {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
@@ -42,6 +43,6 @@ export const logout = async (req: Request, res: Response) => {
   const language = (req.headers.language as language) || "en";
   const token = req.cookies?.sessiontoken;
   if (token) await destroySession(token);
-  res.clearCookie("sessiontoken");
+  res.clearCookie(COOKIE_NAMES.SESSION);
   res.json({ success: true, message: responses.Logout_Successful[language] });
 };
