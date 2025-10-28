@@ -6,7 +6,7 @@ import { isAuthenticated } from "../services/isAuthenticated";
 
 const router = Router();
 
-router.post("/register", validateRegisterInput, register);
+router.post("/register", isAuthenticated, validateRegisterInput, register);
 router.post("/login", isAlreadyLoggedIn, validateLoginInput, login);
 router.post("/logout", isAuthenticated, logout);
 
